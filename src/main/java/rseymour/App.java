@@ -1,5 +1,3 @@
-package rseymour;
-
 /**
  * Hello world!
  *
