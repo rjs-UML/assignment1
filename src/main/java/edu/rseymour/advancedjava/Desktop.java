@@ -4,10 +4,10 @@ import edu.rseymour.advancedjava.exceptionhandlers.InvalidDataException;
 import edu.rseymour.advancedjava.exceptionhandlers.PowerException;
 
 /**
- * Desktop class that creates a desktop computer with a monitor, system unit,
+ * The Desktop class creates a desktop computer with a monitor, system unit,
  * keyboard, and mouse.
  *
- * Can power on, set password, and login.
+ * A Desktop instance can power on or off, set password, and login.
  */
 public class Desktop {
 
@@ -20,9 +20,13 @@ public class Desktop {
     private String password;
 
     /**
-     * Class contructor that returns a desktop computer consisting of a monitor,
-     * system unit, keyboard, and mouse. You must set the password the first time
-     * you log in.
+     * Private no-argument constructor.
+     */
+    private Desktop(){};
+
+    /**
+     * Class constructor that returns a Desktop instance consisting of a monitor,
+     * system unit, keyboard, and mouse.
      *
      * @param monitor a desktop monitor with a named brand and size.
      * @param systemUnit a system unit with a brand and gigabytes of memory.
@@ -58,22 +62,24 @@ public class Desktop {
     }
 
     /**
-     * @return true if the desktop is logged in, false if the
-     * desktop is logged out.
+     * @return true if this Desktop is logged in, false if this
+     * Desktop is logged out.
      */
     public boolean isLoggedIn() {
         return this.isLoggedIn;
     }
 
     /**
-     * Logs the user into the desktop computer. The first time the user
-     * logs in, the user must set the password. After the first time the
-     * user logs in, the password is validated using the stored password
-     * for the desktop instance.
+     * Logs the user into this Desktop with a password.
      *
-     * @param mPassword the password the user enters to log in to the
-     *                  desktop. Must be equal to the current password
-     *                  value for the desktop instance.
+     * The first time this method is called, you must set the
+     * password. After the first time the method is called,
+     * the password verified using {@link #validatePassword(String)}
+     * with the stored password for this Desktop.
+     *
+     * @param mPassword the password the user enters to log in to this
+     *                  Desktop. Must be equal to the current password
+     *                  value for this Desktop.
      * @throws PowerException if isPoweredOn is set to false.
      * @throws InvalidDataException if mPassword does not equal the stored
      * password for the desktop instance.
@@ -96,7 +102,8 @@ public class Desktop {
     }
 
     /**
-     * Sets the desktop instance password.
+     * Sets the password for this Desktop.
+     *
      * @param password must be between 8 and 15 characters long.
      * @throws InvalidDataException if mPassword does not meet
      * minimum password requirements.
@@ -110,9 +117,10 @@ public class Desktop {
 
     /**
      * Validates that the password used during login is equal to the stored
-     * password for the desktop instance.
+     * password for this Desktop.
+     *
      * @param mPassword a password that meets the minimum requirements as
-     *                  defined by setPassword().
+     *                  defined by the {@link #setPassword(String)} method.
      * @throws InvalidDataException if mPassword is not equal to the stored
      * password for the desktop instance.
      */

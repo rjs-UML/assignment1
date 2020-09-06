@@ -22,8 +22,8 @@ public class DesktopTest {
     private Mouse mouse;
 
     /**
-     * Configures the desktop instance to run Junit tests. Creates and
-     * injects Monitor, SystemUnit, Keyboard, and Mouse instances to create
+     * Configures a desktop object to run Junit tests. Creates and
+     * injects Monitor, SystemUnit, Keyboard, and Mouse objects to create
      * Desktop test instance.
      */
     @Before
@@ -36,9 +36,9 @@ public class DesktopTest {
     }
 
     /**
-     * Verifies validatePassword() correctly validates the stored
-     * password for the desktop instance against the String parameter
-     * passed to validatePassword().
+     * Verifies {@link Desktop#validatePassword(String)}
+     * correctly validates the stored password for this Desktop against the
+     * string parameter.
      */
     @Test
     public void validatePasswordTest() throws InvalidDataException {
@@ -48,10 +48,11 @@ public class DesktopTest {
     }
 
     /**
-     * Verifies validatePassword() throws InvalidDataException
-     * when the stored password for the desktop instance is not equal
-     * to the String parameter passed to validatePassword().
-     * @throws InvalidDataException
+     * Verifies {@link Desktop#validatePassword(String)}
+     * throws InvalidDataException.
+     *
+     * @throws InvalidDataException when the stored password for this Desktop
+     * is not equal to the string parameter passed to validatePassword().
      */
     @Test (expected = InvalidDataException.class)
     public void validatePasswordExceptionTest() throws InvalidDataException {
@@ -61,9 +62,9 @@ public class DesktopTest {
     }
 
     /**
-     * Verifies that the isPoweredOn is true, the desktop instance password
+     * Verifies that when isPoweredOn equals true, the desktop instance password
      * is set, and the String parameter passed to the logIn() method is
-     * equal to the stored password for the desktop instance.
+     * equal to the stored password for this Desktop.
      */
     @Test
     public void logInTest() throws PowerException, InvalidDataException {
@@ -77,6 +78,7 @@ public class DesktopTest {
     /**
      * Verifies that a PowerException is thrown if a user tries to log in
      * if isPoweredOn is false.
+     *
      * @throws PowerException when isPoweredOn is false.
      */
     @Test (expected = PowerException.class)
@@ -86,8 +88,10 @@ public class DesktopTest {
     }
 
     /**
-     * Verifies that setPassword() validates the stored password for the desktop
-     * instance equals the String parameter passed to setPassword().
+     * Verifies that {@link Desktop#setPassword(String)} validates the stored
+     * password for the desktop instance equals the String parameter passed
+     * to {@link Desktop#setPassword(String)}.
+     *
      * @throws InvalidDataException
      */
     @Test
@@ -99,7 +103,7 @@ public class DesktopTest {
     /**
      * Verifies that an InvalidDataException is thrown if the stored password
      * for he desktop instance is not equal to the String parameter passed
-     * to setPassword().
+     * to {@link Desktop#setPassword(String)}.
      * @throws InvalidDataException
      */
     @Test(expected = InvalidDataException.class)

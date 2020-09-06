@@ -15,11 +15,13 @@ public class Mouse extends Peripheral {
     private Mouse(){};
 
     /**
-     * Constructor for Mouse instance. Returns a wired or wireless
-     * Mouse instance with a defined manufacturer.
+     * Constructor for Mouse instance.
+     *
+     * Returns a wired or wireless Mouse instance with a defined manufacturer.
+     *
      * @param brand name of mouse manufacturer.
      * @param isWireless determines if the mouse instance connects
-     *                   to the system unit with wifi or wired connection.
+     *                   to the system unit using a wireless or wired connection.
      */
     public Mouse(String brand, boolean isWireless) {
         this.brand = brand;
