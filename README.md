@@ -1,2 +1,5 @@
 # assignment1
-first assignment
+
+Ryan Seymour first assignment
+
+
